@@ -21,10 +21,32 @@ namespace OxyPlotTest
             var model = new PlotModel
             {
                 Title = "OxyPlot 그래프 테스트",
+                //Subtitle = "서브타이블",
                 PlotType = PlotType.XY,
+                Background = OxyColors.White
             };
 
+            var series1 = new LineSeries { Title = "Series 1", MarkerType = MarkerType.Circle };
+            series1.Points.Add(new DataPoint(0, 0));
+            series1.Points.Add(new DataPoint(10, 18));
+            series1.Points.Add(new DataPoint(20, 12));
+            series1.Points.Add(new DataPoint(30, 8));
+            series1.Points.Add(new DataPoint(40, 15));
+
+            var series2 = new LineSeries { Title = "Series 2", MarkerType = MarkerType.Square };
+            series2.Points.Add(new DataPoint(0, 4));
+            series2.Points.Add(new DataPoint(10, 12));
+            series2.Points.Add(new DataPoint(20, 16));
+            series2.Points.Add(new DataPoint(30, 25));
+            series2.Points.Add(new DataPoint(40, 5));
+
+            model.Series.Add(series1);
+            model.Series.Add(series2);
+
+
+
             // 차트에 표현해줄 데이터 입니다.
+            /*
             Dictionary<DateTime, double> data = new Dictionary<DateTime, double>();
             data.Add(new DateTime(2020, 12, 1, 0, 00, 00), 10);
             data.Add(new DateTime(2020, 12, 2, 0, 00, 00), 20);
@@ -52,15 +74,16 @@ namespace OxyPlotTest
             data.Add(new DateTime(2020, 12, 10, 0, 00, 00), 10);
 
             CreateBarChart(model, data);
+            */
 
 
             // x축은 시간이 보이도록 설정합니다.
-            model.Axes.Add(new DateTimeAxis
-            {
-                Title = "일",
-                Position = AxisPosition.Bottom,
-                StringFormat = "dd" //화면에 보여질 단위를 정한다.
-            });
+            //model.Axes.Add(new DateTimeAxis
+            //{
+            //    Title = "일",
+            //    Position = AxisPosition.Bottom,
+            //    StringFormat = "dd" //화면에 보여질 단위를 정한다.
+            //});
 
             // Y 축은 값입니다.
             model.Axes.Add(new LinearAxis
