@@ -26,14 +26,14 @@ namespace OxyPlotTest
                 Background = OxyColors.White
             };
 
-            var series1 = new LineSeries { Title = "Series 1", MarkerType = MarkerType.Circle };
+            var series1 = new LineSeries { MarkerType = MarkerType.Circle };
             series1.Points.Add(new DataPoint(0, 0));
             series1.Points.Add(new DataPoint(10, 18));
             series1.Points.Add(new DataPoint(20, 12));
             series1.Points.Add(new DataPoint(30, 8));
             series1.Points.Add(new DataPoint(40, 15));
 
-            var series2 = new LineSeries { Title = "Series 2", MarkerType = MarkerType.Square };
+            var series2 = new LineSeries { MarkerType = MarkerType.Square, Smooth = true };
             series2.Points.Add(new DataPoint(0, 4));
             series2.Points.Add(new DataPoint(10, 12));
             series2.Points.Add(new DataPoint(20, 16));
